@@ -1,0 +1,47 @@
+# ملفات البيئة والمفاتيح الحساسة
+# Environment files and sensitive keys
+.env
+.env.local
+.env.*.local
+config.js
+
+# ملفات النظام
+# System files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# محررات الأكواد
+# Code editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ملفات مؤقتة
+# Temporary files
+*.log
+*.tmp
+*.temp
+
+# ملفات البناء
+# Build files
+dist/
+build/
+node_modules/
+
+# ملفات النسخ الاحتياطي
+# Backup files
+*.bak
+*.backup
+
+
+# استثناء ملفات التوثيق الداخلية
+.SEO_IMPLEMENTATION_GUIDE.md
+.ENV_SETUP.md
+.MEDIA_SETUP.md
+.SUPABASE_SETUP.md
+.INTEGRATION_SUMMARY.md
+.JAVASCRIPT_IMPLEMENTATION.md
+.SEO_IMPLEMENTATION_GUIDE.md
