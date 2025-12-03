@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ادعمنا - مركز الشفاء لتعليم القرآن</title>
+    <meta name="description" content="ادعم أهل القرآن وكفالة معلمي القرآن في مركز الشفاء.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>*{font-family: 'Cairo', sans-serif;}</style>
+</head>
+
+<body class="bg-amber-50">
+      <header class="mb-12" >
+    <nav class="bg-amber-900 text-white shadow-lg fixed top-0 mb-4 z-50 w-full" role="navigation" aria-label="القائمة الرئيسية">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center space-x-4 space-x-reverse">
+                    <img src="logonew.png" alt="شعار مركز الشفاء" height="50" width="50">
+                    <span class="text-2xl font-bold">مركز الشفاء لتعليم القرآن</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-6 space-x-reverse">
+                    <a href="index.html" class="hover:text-amber-200 transition">الرئيسية</a>
+                    <a href="about.html" class="hover:text-amber-200 transition">عن المركز</a>
+                    <a href="courses.html" class="hover:text-amber-200 transition">المواد التعليمية</a>
+                    <a href="services.html" class="hover:text-amber-200 transition">الخدمات والبرامج</a>
+                    <a href="achievements.html" class="hover:text-amber-200 transition">الإنجازات</a>
+                    <a href="gallery.html" class="hover:text-amber-200 transition">المعرض</a>
+                    <a href="contact.html" class="hover:text-amber-200 transition">التواصل</a>
+                    <a href="admin/dashboard.html"
+                        class="bg-amber-700 px-4 py-2 rounded hover:bg-amber-600 transition">لوحة التحكم</a>
+                </div>
+                <button class="md:hidden text-2xl" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            <!-- Mobile Menu -->
+            <div class="hidden md:hidden pb-4" id="mobileMenu">
+                <a href="index.html" class="block py-2 hover:text-amber-200">الرئيسية</a>
+                <a href="about.html" class="block py-2 hover:text-amber-200">عن المركز</a>
+                <a href="courses.html" class="block py-2 hover:text-amber-200">المواد التعليمية</a>
+                <a href="services.html" class="block py-2 hover:text-amber-200">الخدمات والبرامج</a>
+                <a href="achievements.html" class="block py-2 hover:text-amber-200">الإنجازات</a>
+                <a href="gallery.html" class="block py-2 hover:text-amber-200">المعرض</a>
+                <a href="contact.html" class="block py-2 hover:text-amber-200">التواصل</a>
+                <a href="admin/dashboard.html" class="block py-2 bg-amber-700 rounded mt-2 text-center">لوحة التحكم</a>
+            </div>
+        </div>
+    </nav>
+    </header>
+
+    <header class="bg-gradient-to-b from-amber-900 to-amber-800 text-white py-20">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">ساهم معنا في نشر العلم والقرآن</h1>
+            <p class="text-lg md:text-xl text-amber-100 mb-6">دعمك يثمر حفظًا وتعليمًا ويعيل مربّي القرآن ويقوّي العمل القرآني</p>
+            <a href="#ways" class="bg-white text-amber-900 px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition">طرق
+                الدعم</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-12">
+        <section class="mb-10 bg-white p-8 rounded-lg shadow">
+            <h2 class="text-2xl font-bold text-amber-900 mb-4">فضل دعم أهل القرآن</h2>
+            <p class="text-gray-700 leading-relaxed mb-4">دعم أهل القرآن من أعظم القربات؛ فالمساهمة في تعليم القرآن ونشره عملٌ ثابتٌ له أجرٍ مستمر. من يعين معلماً أو حافظاً أو يسهم في بقاء حلقات ومراكز تعليم القرآن فقد كتب له أجر المعلّم والمتعلم مع استمرار نفع العلم.</p>
+            <p class="text-gray-700 leading-relaxed">قال رسول الله ﷺ: "من دلّ على خير فله مثل أجر فاعله" — فالداعم الذي يسهم في بقاء حلقة أو إعانة طالب أو كفالة معلم له مشاركةٌ في الثواب.</p>
+        </section>
+
+        <section class="mb-10 bg-white p-8 rounded-lg shadow">
+            <h2 class="text-2xl font-bold text-amber-900 mb-4">كفالة معلمي القرآن</h2>
+            <p class="text-gray-700 leading-relaxed mb-4">كفالة معلمي القرآن تُعطيهم استقراراً مادياً لكي يواصلوا التعليم والتدريب، وتضمن جودة التعليم واستمراريته. الكفالة قد تشمل راتباً شهرياً، دعم تكوين أو سفر للمشاركة في دورات تدريبية، أو إعانة لتغطية احتياجات أسرية تُعيق استمرارهم في التعليم.</p>
+            <ul class="list-disc pr-6 text-gray-700">
+                <li class="mb-2">كفالة شهرية لمعلمين بدخل محدود.</li>
+                <li class="mb-2">دعم للمواد التعليمية (مطبوعات، مصاحف، أدوات تعليمية).</li>
+                <li class="mb-2">تمويل دورات تأهيل للمعلمين وورش عمل تطويرية.</li>
+            </ul>
+        </section>
+
+        <section id="ways" class="mb-10 bg-white p-8 rounded-lg shadow">
+            <h2 class="text-2xl font-bold text-amber-900 mb-4">وسائل الدعم الممكنة</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="p-4 border rounded-lg">
+                    <h3 class="font-semibold text-amber-900 mb-2">1. الدعم المالي</h3>
+                    <p class="text-gray-700 mb-2">تبرعات نقدية شهرية أو مرة واحدة لتغطية الرواتب والأنشطة وشراء المصاحف والكتب.</p>
+                </div>
+                <div class="p-4 border rounded-lg">
+                    <h3 class="font-semibold text-amber-900 mb-2">2. الدعم المادي (عيني)</h3>
+                    <p class="text-gray-700 mb-2">توفير مصاحف، أجهزة تسجيل صوتي، أجهزة عرض، أدوات تعليمية، أو مواد تنظيف ومرافق للحلقات.</p>
+                </div>
+                <div class="p-4 border rounded-lg">
+                    <h3 class="font-semibold text-amber-900 mb-2">3. كفالة الطلبة والمعلمين</h3>
+                    <p class="text-gray-700 mb-2">كفالة طالب للتحفيظ أو كفالة معلم لتوفير دخل ثابت يساعده على الاستمرار في التعليم.</p>
+                </div>
+                <div class="p-4 border rounded-lg">
+                    <h3 class="font-semibold text-amber-900 mb-2">4. توفير كوادر ومتطوعين</h3>
+                    <p class="text-gray-700 mb-2">المساهمة بالكوادر التعليمية أو الإدارية أو التطوعية (تنظيم، متابعة، أنشطة ترويجية).</p>
+                </div>
+            </div>
+
+            <div class="mt-6 text-center">
+                <p class="text-gray-700 mb-4">للتنسيق أو إرسال الدعم، تواصل معنا عبر صفحة التواصل أو عبر الرقم التالي:</p>
+                <div class="flex items-center justify-center gap-4 flex-wrap">
+                    <a href="contact.html" class="bg-amber-600 hover:bg-amber-500 text-white px-6 py-2 rounded-lg">تواصل معنا</a>
+                    <a href="mailto:alshifacenter874@gmail.com" class="bg-transparent border-2 border-amber-700 text-amber-700 px-6 py-2 rounded-lg">أرسل إيميل</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-white p-6 rounded-lg shadow">
+            <h2 class="text-xl font-bold text-amber-900 mb-3">ملاحظة</h2>
+            <p class="text-gray-700">إذا رغبت بآليات تبرع إلكترونية (مثل الدفع عبر بطاقة أو تحويل بنكي أو بوابة دفع)، يمكننا إضافتها لاحقًا مع تفاصيل الحسابات أو ربط بوابة دفع—هل تريد أن أعد صفحة دفع متكاملة؟</p>
+        </section>
+    </main>
+
+    <footer class="bg-amber-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">مركز الشفاء</h3>
+                    <p class="text-amber-200">نور القرآن يضيء قلوبنا ويهدي خطانا</p>
+                </div>
+                <div>
+                    <h4 class="text-xl font-semibold mb-4">روابط سريعة</h4>
+                    <ul class="space-y-2">
+                        <li><a href="about.html" class="text-amber-200 hover:text-white transition">عن المركز</a></li>
+                        <li><a href="courses.html" class="text-amber-200 hover:text-white transition">المواد
+                                التعليمية</a></li>
+                        <li><a href="services.html" class="text-amber-200 hover:text-white transition">الخدمات</a></li>
+                        <li><a href="contact.html" class="text-amber-200 hover:text-white transition">التواصل</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xl font-semibold mb-4">معلومات التواصل</h4>
+                    <ul class="space-y-2 text-amber-200">
+                        <li><i class="fas fa-phone ml-2"></i> +966 55 327 3660</li>
+                        <li><i class="fas fa-envelope ml-2"></i> alshifacenter874@gmail.com</li>
+                        <li><i class="fas fa-map-marker-alt ml-2"></i> اليمن-تعز -جبل حبشي</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xl font-semibold mb-4">تابعنا</h4>
+                    <div class="flex space-x-4 space-x-reverse">
+                        <!-- <a href="#" class="text-2xl text-amber-200 hover:text-white transition"><i
+                                class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-2xl text-amber-200 hover:text-white transition"><i
+                                class="fab fa-twitter"></i></a> -->
+                        <a href="#" class="text-2xl text-amber-200 hover:text-white transition"><i
+                                class="fab fa-whatsapp"></i></a>
+                        <a href="https://youtube.com/channel/UC_4oT1OEXRwHF2gooTDH1cA?si=6RoJzfLBDA1o37T7" class="text-2xl text-amber-200 hover:text-white transition"><i
+                                class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-amber-800 mt-8 pt-8 text-center text-amber-200">
+                <p>&copy; 2025 مركز الشفاء لتعليم القرآن الكريم. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
