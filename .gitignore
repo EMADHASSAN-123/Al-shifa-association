@@ -1,9 +1,5 @@
 # ملفات البيئة والمفاتيح الحساسة
 # Environment files and sensitive keys
-#.env
-#.env.local
-#.env.*.local
-#config.js
 
 # ملفات النظام
 # System files
