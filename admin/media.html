@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إدارة الوسائط - لوحة التحكم</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Cairo', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <!-- Sidebar -->
+    <div class="flex h-screen">
+        <aside class="w-64 bg-amber-900 text-white fixed h-full">
+            <div class="p-6">
+                <div class="flex items-center mb-8">
+                    <i class="fas fa-book-quran text-3xl text-amber-200 ml-3"></i>
+                    <h1 class="text-xl font-bold">لوحة التحكم</h1>
+                </div>
+                <nav class="space-y-2">
+                    <a href="dashboard.html" class="flex items-center p-3 hover:bg-amber-800 rounded-lg transition">
+                        <i class="fas fa-home ml-3"></i>
+                        <span>الرئيسية</span>
+                    </a>
+                    <a href="analytics.html" class="flex items-center p-3 hover:bg-amber-800 rounded-lg transition">
+                        <i class="fas fa-chart-line ml-3"></i>
+                        <span>إحصائيات الزوار</span>
+                    </a>
+                    <a href="content-management.html" class="flex items-center p-3 hover:bg-amber-800 rounded-lg transition">
+                        <i class="fas fa-edit ml-3"></i>
+                        <span>إدارة المحتوى</span>
+                    </a>
+                    <a href="ai-tools.html" class="flex items-center p-3 hover:bg-amber-800 rounded-lg transition">
+                        <i class="fas fa-robot ml-3"></i>
+                        <span>أدوات الذكاء الاصطناعي</span>
+                    </a>
+                    <a href="media.html" class="flex items-center p-3 bg-amber-800 rounded-lg">
+                        <i class="fas fa-images ml-3"></i>
+                        <span>إدارة الوسائط</span>
+                    </a>
+                    <a href="../index.html" class="flex items-center p-3 hover:bg-amber-800 rounded-lg transition">
+                        <i class="fas fa-globe ml-3"></i>
+                        <span>الموقع الرئيسي</span>
+                    </a>
+                    <a href="#" onclick="logout()" class="flex items-center p-3 hover:bg-red-700 rounded-lg transition">
+                        <i class="fas fa-sign-out-alt ml-3"></i>
+                        <span>تسجيل الخروج</span>
+                    </a>
+                </nav>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 mr-64">
+            <!-- Top Bar -->
+            <header class="bg-white shadow-md p-6">
+                <div class="flex items-center justify-between">
+                    <h2 class="text-2xl font-bold text-amber-900">إدارة الوسائط</h2>
+                    <button class="bg-amber-700 hover:bg-amber-600 text-white px-6 py-2 rounded-lg transition" onclick="openUploadModal()">
+                        <i class="fas fa-upload ml-2"></i> رفع ملفات جديدة
+                    </button>
+                </div>
+            </header>
+
+            <!-- Media Management -->
+            <div class="p-6">
+                <!-- Filter Tabs -->
+                <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
+                    <div class="flex space-x-4 space-x-reverse border-b">
+                        <button class="px-6 py-3 font-semibold text-amber-900 border-b-2 border-amber-700 media-tab active" data-type="all">
+                            الكل
+                        </button>
+                        <button class="px-6 py-3 font-semibold text-gray-600 hover:text-amber-900 media-tab" data-type="images">
+                            <i class="fas fa-image ml-2"></i> الصور
+                        </button>
+                        <button class="px-6 py-3 font-semibold text-gray-600 hover:text-amber-900 media-tab" data-type="videos">
+                            <i class="fas fa-video ml-2"></i> الفيديوهات
+                        </button>
+                        <button class="px-6 py-3 font-semibold text-gray-600 hover:text-amber-900 media-tab" data-type="audio">
+                            <i class="fas fa-headphones ml-2"></i> الصوتيات
+                        </button>
+                        <button class="px-6 py-3 font-semibold text-gray-600 hover:text-amber-900 media-tab" data-type="documents">
+                            <i class="fas fa-file-pdf ml-2"></i> المستندات
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Media Grid -->
+                <div class="grid md:grid-cols-4 lg:grid-cols-6 gap-4" id="mediaGrid">
+                    <div class="col-span-full text-center py-8">
+                        <i class="fas fa-spinner fa-spin text-4xl text-amber-700 mb-4"></i>
+                        <p class="text-gray-600">جاري تحميل الوسائط...</p>
+                    </div>
+                </div>
+
+                <!-- Pagination -->
+                <div id="paginationContainer" class="mt-6 flex justify-center items-center space-x-4 space-x-reverse">
+                    <!-- Pagination will be inserted here -->
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Upload Modal -->
+    <div id="uploadModal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-lg shadow-xl w-full max-w-2xl max-h-[90vh] overflow-y-auto">
+            <div class="p-6 border-b sticky top-0 bg-white z-10">
+                <div class="flex items-center justify-between">
+                    <h3 class="text-2xl font-bold text-amber-900">إضافة وسيط جديد</h3>
+                    <button onclick="closeUploadModal()" class="text-gray-500 hover:text-gray-700">
+                        <i class="fas fa-times text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+            <form id="uploadForm" class="p-6 space-y-4">
+                <!-- Media Type Selection -->
+                <div>
+                    <label class="block text-gray-700 font-semibold mb-2">نوع الوسيط</label>
+                    <select id="mediaType" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-amber-700" onchange="handleMediaTypeChange()">
+                        <option value="image">صورة</option>
+                        <option value="video">فيديو YouTube</option>
+                        <option value="audio">صوت</option>
+                    </select>
+                </div>
+
+                <!-- Title -->
+                <div>
+                    <label class="block text-gray-700 font-semibold mb-2">العنوان</label>
+                    <input type="text" id="mediaTitle" required
+                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-amber-700"
+                        placeholder="أدخل عنوان الوسيط">
+                </div>
+
+                <!-- Description -->
+                <div>
+                    <label class="block text-gray-700 font-semibold mb-2">الوصف (اختياري)</label>
+                    <textarea id="mediaDescription" rows="3"
+                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-amber-700"
+                        placeholder="أدخل وصف الوسيط"></textarea>
+                </div>
+
+                <!-- Image Upload Section -->
+                <div id="imageUploadSection">
+                    <label class="block text-gray-700 font-semibold mb-2">اختر الصورة</label>
+                    <input type="file" id="fileInput" accept="image/*"
+                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-amber-700"
+                        onchange="handleImagePreview(event)">
+                    <div id="imagePreview" class="mt-4 hidden">
+                        <img id="previewImage" src="" alt="Preview" class="max-w-full h-64 object-contain rounded-lg border border-gray-300">
+                    </div>
+                </div>
+
+                <!-- YouTube Video Section -->
+                <div id="videoUrlSection" class="hidden">
+                    <label class="block text-gray-700 font-semibold mb-2">رابط فيديو YouTube</label>
+                    <input type="url" id="videoUrl" 
+                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-amber-700"
+                        placeholder="https://www.youtube.com/watch?v=..."
+                        onchange="handleVideoPreview(event)">
+                    <p class="text-sm text-gray-500 mt-1">أدخل رابط فيديو من YouTube</p>
+                    <div id="videoPreview" class="mt-4 hidden">
+                        <div id="previewVideo" class="w-full aspect-video rounded-lg border border-gray-300"></div>
+                    </div>
+                </div>
+
+                <!-- Audio Upload Section -->
+                <div id="audioUploadSection" class="hidden">
+                    <label class="block text-gray-700 font-semibold mb-2">اختر ملف صوتي</label>
+                    <input type="file" id="audioInput" accept="audio/*"
+                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-amber-700"
+                        onchange="handleAudioPreview(event)">
+                    <div id="audioPreview" class="mt-4 hidden">
+                        <audio id="previewAudio" controls class="w-full rounded-lg">
+                            متصفحك لا يدعم مشغل الصوت.
+                        </audio>
+                    </div>
+                </div>
+
+                <!-- Upload Progress -->
+                <div id="uploadProgress" class="hidden">
+                    <div class="bg-gray-200 rounded-full h-2">
+                        <div id="progressBar" class="bg-amber-700 h-2 rounded-full transition-all duration-300" style="width: 0%"></div>
+                    </div>
+                    <p class="text-sm text-gray-600 mt-2 text-center">جاري الرفع...</p>
+                </div>
+
+                <!-- Success/Error Messages -->
+                <div id="uploadMessage" class="hidden"></div>
+
+                <!-- Action Buttons -->
+                <div class="flex justify-end space-x-4 space-x-reverse pt-4 border-t">
+                    <button type="button" onclick="closeUploadModal()" 
+                        class="px-6 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition">
+                        إلغاء
+                    </button>
+                    <button type="submit" id="submitBtn"
+                        class="px-6 py-2 bg-amber-700 hover:bg-amber-600 text-white rounded-lg transition">
+                        <i class="fas fa-save ml-2"></i> حفظ
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Edit Modal -->
+    <div id="editModal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-lg shadow-xl w-full max-w-2xl max-h-[90vh] overflow-y-auto">
+            <div class="p-6 border-b sticky top-0 bg-white z-10">
+                <div class="flex items-center justify-between">
+                    <h3 class="text-2xl font-bold text-amber-900">تعديل وسيط</h3>
+                    <button onclick="closeEditModal()" class="text-gray-500 hover:text-gray-700">
+                        <i class="fas fa-times text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+            <form id="editForm" class="p-6 space-y-4">
+                <input type="hidden" id="editMediaId">
+                
+                <!-- Title -->
+                <div>
+                    <label class="block text-gray-700 font-semibold mb-2">العنوان</label>
+                    <input type="text" id="editMediaTitle" required
+                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-amber-700">
+                </div>
+
+                <!-- Description -->
+                <div>
+                    <label class="block text-gray-700 font-semibold mb-2">الوصف</label>
+                    <textarea id="editMediaDescription" rows="3"
+                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-amber-700"></textarea>
+                </div>
+
+                <!-- Media Type Specific Fields -->
+                <div id="editMediaContent"></div>
+
+                <!-- Action Buttons -->
+                <div class="flex justify-end space-x-4 space-x-reverse pt-4 border-t">
+                    <button type="button" onclick="closeEditModal()" 
+                        class="px-6 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition">
+                        إلغاء
+                    </button>
+                    <button type="submit" 
+                        class="px-6 py-2 bg-amber-700 hover:bg-amber-600 text-white rounded-lg transition">
+                        <i class="fas fa-save ml-2"></i> حفظ التعديلات
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../config.js"></script>
+    <script src="../js/supabase-config.js"></script>
+    <script src="../js/ui.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/admin-header.js"></script>
+    <script src="../js/supabase-content.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/media-management.js"></script>
+</body>
+</html>
+
