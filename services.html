@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,44 +16,47 @@
         }
     </style>
 </head>
+
 <body class="bg-amber-50">
     <!-- Navigation -->
-      <header class="mb-12" >
-    <nav class="bg-amber-900 text-white shadow-lg fixed top-0 mb-4 z-50 w-full" role="navigation" aria-label="القائمة الرئيسية">
-        <div class="container mx-auto px-4">
-            <div class="flex items-center justify-between h-20">
-                <div class="flex items-center space-x-4 space-x-reverse">
-                    <img src="images/logonew.png" alt="شعار مركز الشفاء" height="50" width="50">
-                    <span class="text-2xl font-bold">مركز الشفاء لتعليم القرآن</span>
+    <header class="mb-12">
+        <nav class="bg-amber-900 text-white shadow-lg fixed top-0 mb-4 z-50 w-full" role="navigation"
+            aria-label="القائمة الرئيسية">
+            <div class="container mx-auto px-4">
+                <div class="flex items-center justify-between h-20">
+                    <div class="flex items-center space-x-4 space-x-reverse">
+                        <img src="images/logonew.png" alt="شعار مركز الشفاء" height="50" width="50">
+                        <span class="text-2xl font-bold">مركز الشفاء لتعليم القرآن</span>
+                    </div>
+                    <div class="hidden md:flex items-center space-x-6 space-x-reverse">
+                        <a href="index.html" class="hover:text-amber-200 transition">الرئيسية</a>
+                        <a href="about.html" class="hover:text-amber-200 transition">عن المركز</a>
+                        <a href="courses.html" class="hover:text-amber-200 transition">المواد التعليمية</a>
+                        <a href="services.html" class="hover:text-amber-200 transition">الخدمات والبرامج</a>
+                        <a href="achievements.html" class="hover:text-amber-200 transition">الإنجازات</a>
+                        <a href="gallery.html" class="hover:text-amber-200 transition">المعرض</a>
+                        <a href="contact.html" class="hover:text-amber-200 transition">التواصل</a>
+                        <a href="admin/dashboard.html"
+                            class="bg-amber-700 px-4 py-2 rounded hover:bg-amber-600 transition">لوحة التحكم</a>
+                    </div>
+                    <button class="md:hidden text-2xl" id="mobileMenuBtn">
+                        <i class="fas fa-bars"></i>
+                    </button>
                 </div>
-                <div class="hidden md:flex items-center space-x-6 space-x-reverse">
-                    <a href="index.html" class="hover:text-amber-200 transition">الرئيسية</a>
-                    <a href="about.html" class="hover:text-amber-200 transition">عن المركز</a>
-                    <a href="courses.html" class="hover:text-amber-200 transition">المواد التعليمية</a>
-                    <a href="services.html" class="hover:text-amber-200 transition">الخدمات والبرامج</a>
-                    <a href="achievements.html" class="hover:text-amber-200 transition">الإنجازات</a>
-                    <a href="gallery.html" class="hover:text-amber-200 transition">المعرض</a>
-                    <a href="contact.html" class="hover:text-amber-200 transition">التواصل</a>
-                    <a href="admin/dashboard.html"
-                        class="bg-amber-700 px-4 py-2 rounded hover:bg-amber-600 transition">لوحة التحكم</a>
+                <!-- Mobile Menu -->
+                <div class="hidden md:hidden pb-4" id="mobileMenu">
+                    <a href="index.html" class="block py-2 hover:text-amber-200">الرئيسية</a>
+                    <a href="about.html" class="block py-2 hover:text-amber-200">عن المركز</a>
+                    <a href="courses.html" class="block py-2 hover:text-amber-200">المواد التعليمية</a>
+                    <a href="services.html" class="block py-2 hover:text-amber-200">الخدمات والبرامج</a>
+                    <a href="achievements.html" class="block py-2 hover:text-amber-200">الإنجازات</a>
+                    <a href="gallery.html" class="block py-2 hover:text-amber-200">المعرض</a>
+                    <a href="contact.html" class="block py-2 hover:text-amber-200">التواصل</a>
+                    <a href="admin/dashboard.html" class="block py-2 bg-amber-700 rounded mt-2 text-center">لوحة
+                        التحكم</a>
                 </div>
-                <button class="md:hidden text-2xl" id="mobileMenuBtn">
-                    <i class="fas fa-bars"></i>
-                </button>
             </div>
-            <!-- Mobile Menu -->
-            <div class="hidden md:hidden pb-4" id="mobileMenu">
-                <a href="index.html" class="block py-2 hover:text-amber-200">الرئيسية</a>
-                <a href="about.html" class="block py-2 hover:text-amber-200">عن المركز</a>
-                <a href="courses.html" class="block py-2 hover:text-amber-200">المواد التعليمية</a>
-                <a href="services.html" class="block py-2 hover:text-amber-200">الخدمات والبرامج</a>
-                <a href="achievements.html" class="block py-2 hover:text-amber-200">الإنجازات</a>
-                <a href="gallery.html" class="block py-2 hover:text-amber-200">المعرض</a>
-                <a href="contact.html" class="block py-2 hover:text-amber-200">التواصل</a>
-                <a href="admin/dashboard.html" class="block py-2 bg-amber-700 rounded mt-2 text-center">لوحة التحكم</a>
-            </div>
-        </div>
-    </nav>
+        </nav>
     </header>
 
     <!-- Page Header -->
@@ -67,7 +71,7 @@
     <section class="py-16 bg-white">
         <div class="container mx-auto px-4">
             <div class="text-center mb-12">
-                <h2 class="text-4xl font-bold text-amber-900 mb-4">قائمة البرامج</h2>
+                <h2 class="text-4xl font-bold text-amber-900 mb-4">قائمة الخدمات</h2>
                 <div class="w-24 h-1 bg-amber-600 mx-auto mb-8"></div>
             </div>
             <div class="max-w-4xl mx-auto space-y-8">
@@ -75,75 +79,85 @@
                 <div class="bg-amber-50 rounded-lg shadow-lg p-8 hover:shadow-xl transition">
                     <div class="flex items-start">
                         <div class="bg-amber-700 text-white rounded-full p-4 ml-6">
-                            <i class="fas fa-book-open text-3xl"></i>
+                            <i class="fas fa-mosque text-3xl"></i>
                         </div>
                         <div class="flex-1">
-                            <h3 class="text-2xl font-bold text-amber-900 mb-3">برنامج التلاوة للمبتدئين</h3>
+                            <h3 class="text-2xl font-bold text-amber-900 mb-3">
+                                خدمة ترميم وتأهيل المساجد
+                            </h3>
                             <p class="text-gray-700 leading-relaxed mb-4">
-                                برنامج شامل لتعليم أساسيات التلاوة الصحيحة للقرآن الكريم. يتضمن تعلم الحروف العربية، 
-                                قواعد النطق الصحيح، وتلاوة قصار السور. مناسب للأشخاص الذين يبدأون تعلم القرآن لأول مرة.
+                                يقدم مركز الشفاء خدمة ترميم وتأهيل المساجد، انطلاقًا من رسالته في خدمة بيوت الله
+                                وتهيئتها لتكون بيئة آمنة ومناسبة لأداء الصلوات والأنشطة القرآنية.
+                                تشمل الخدمة أعمال الصيانة والتجديد والتحسين، بما يضمن الحفاظ على قدسية المسجد
+                                وتوفير أجواء مريحة للمصلين.
                             </p>
+
                             <div class="grid md:grid-cols-2 gap-4 mb-4">
                                 <div>
-                                    <i class="fas fa-clock text-amber-700 ml-2"></i>
-                                    <span class="text-gray-700">المدة: 3 أشهر</span>
+                                    <i class="fas fa-tools text-amber-700 ml-2"></i>
+                                    <span class="text-gray-700">أعمال صيانة وتأهيل شاملة</span>
                                 </div>
                                 <div>
-                                    <i class="fas fa-users text-amber-700 ml-2"></i>
-                                    <span class="text-gray-700">عدد الطلاب: 15 طالب</span>
+                                    <i class="fas fa-map-marker-alt text-amber-700 ml-2"></i>
+                                    <span class="text-gray-700">خدمة مساجد الأحياء</span>
                                 </div>
                                 <div>
-                                    <i class="fas fa-calendar text-amber-700 ml-2"></i>
-                                    <span class="text-gray-700">3 أيام في الأسبوع</span>
+                                    <i class="fas fa-hands-helping text-amber-700 ml-2"></i>
+                                    <span class="text-gray-700">بجهود خيرية وتطوعية</span>
                                 </div>
                                 <div>
-                                    <i class="fas fa-certificate text-amber-700 ml-2"></i>
-                                    <span class="text-gray-700">شهادة إتمام</span>
+                                    <i class="fas fa-star text-amber-700 ml-2"></i>
+                                    <span class="text-gray-700">أثر مستدام للمجتمع</span>
                                 </div>
                             </div>
+
                             <button class="bg-amber-700 hover:bg-amber-600 text-white px-6 py-2 rounded transition">
-                                التسجيل الآن
+                                عرض المشاريع المنجزة
                             </button>
                         </div>
                     </div>
                 </div>
 
+
                 <!-- Program 2 -->
-                <div class="bg-amber-50 rounded-lg shadow-lg p-8 hover:shadow-xl transition">
-                    <div class="flex items-start">
-                        <div class="bg-amber-700 text-white rounded-full p-4 ml-6">
-                            <i class="fas fa-mosque text-3xl"></i>
-                        </div>
-                        <div class="flex-1">
-                            <h3 class="text-2xl font-bold text-amber-900 mb-3">برنامج الحفظ المتقدم</h3>
-                            <p class="text-gray-700 leading-relaxed mb-4">
-                                برنامج متخصص لحفظ القرآن الكريم مع ضبط الأحكام والتجويد. يبدأ من جزء عم ويمتد إلى حفظ 
-                                القرآن كاملاً. يتضمن مراجعة دورية وضبط متقن للحفظ.
-                            </p>
-                            <div class="grid md:grid-cols-2 gap-4 mb-4">
-                                <div>
-                                    <i class="fas fa-clock text-amber-700 ml-2"></i>
-                                    <span class="text-gray-700">المدة: 12-18 شهر</span>
-                                </div>
-                                <div>
-                                    <i class="fas fa-users text-amber-700 ml-2"></i>
-                                    <span class="text-gray-700">عدد الطلاب: 10 طالب</span>
-                                </div>
-                                <div>
-                                    <i class="fas fa-calendar text-amber-700 ml-2"></i>
-                                    <span class="text-gray-700">5 أيام في الأسبوع</span>
-                                </div>
-                                <div>
-                                    <i class="fas fa-trophy text-amber-700 ml-2"></i>
-                                    <span class="text-gray-700">احتفال ختم</span>
-                                </div>
-                            </div>
-                            <button class="bg-amber-700 hover:bg-amber-600 text-white px-6 py-2 rounded transition">
-                                التسجيل الآن
-                            </button>
-                        </div>
-                    </div>
+               <div class="bg-amber-50 rounded-lg shadow-lg p-8 hover:shadow-xl transition">
+    <div class="flex items-start">
+        <div class="bg-amber-700 text-white rounded-full p-4 ml-6">
+            <i class="fas fa-chalkboard-teacher text-3xl"></i>
+        </div>
+        <div class="flex-1">
+            <h3 class="text-2xl font-bold text-amber-900 mb-3">
+                الدورات التأهيلية لمعلمي القرآن
+            </h3>
+            <p class="text-gray-700 leading-relaxed mb-4">
+                يقدم مركز الشفاء دورات تأهيلية متخصصة لمعلمي القرآن الكريم، تهدف إلى تطوير
+                قدراتهم العلمية والتربوية، وتعزيز مهاراتهم في أساليب التعليم والتعامل مع
+                الطلاب، بما يسهم في الارتقاء بجودة التعليم القرآني وتحقيق رسالة المركز.
+            </p>
+
+            <div class="grid md:grid-cols-2 gap-4 mb-4">
+                <div>
+                    <i class="fas fa-book-reader text-amber-700 ml-2"></i>
+                    <span class="text-gray-700">تطوير المهارات التعليمية</span>
                 </div>
+                <div>
+                    <i class="fas fa-brain text-amber-700 ml-2"></i>
+                    <span class="text-gray-700">تأهيل تربوي ومنهجي</span>
+                </div>
+                <div>
+                    <i class="fas fa-volume-up text-amber-700 ml-2"></i>
+                    <span class="text-gray-700">تصحيح التلاوة والتجويد</span>
+                </div>
+               
+            </div>
+
+            <button class="bg-amber-700 hover:bg-amber-600 text-white px-6 py-2 rounded transition">
+                عرض 
+            </button>
+        </div>
+    </div>
+</div>
+
 
                 <!-- Program 3 -->
                 <div class="bg-amber-50 rounded-lg shadow-lg p-8 hover:shadow-xl transition">
@@ -154,7 +168,7 @@
                         <div class="flex-1">
                             <h3 class="text-2xl font-bold text-amber-900 mb-3">برنامج التجويد المتخصص</h3>
                             <p class="text-gray-700 leading-relaxed mb-4">
-                                برنامج متقدم لتعلم أحكام التجويد بشكل متخصص. يتضمن دراسة جميع أحكام التجويد النظرية 
+                                برنامج متقدم لتعلم أحكام التجويد بشكل متخصص. يتضمن دراسة جميع أحكام التجويد النظرية
                                 والتطبيقية، مع التركيز على الإتقان والدقة في التلاوة.
                             </p>
                             <div class="grid md:grid-cols-2 gap-4 mb-4">
@@ -191,7 +205,7 @@
                         <div class="flex-1">
                             <h3 class="text-2xl font-bold text-amber-900 mb-3">برنامج الأطفال</h3>
                             <p class="text-gray-700 leading-relaxed mb-4">
-                                برنامج خاص بالأطفال من سن 5-12 سنة. يستخدم طرق تعليمية مناسبة للأطفال مع أنشطة 
+                                برنامج خاص بالأطفال من سن 5-12 سنة. يستخدم طرق تعليمية مناسبة للأطفال مع أنشطة
                                 تفاعلية وألعاب تعليمية تجعل تعلم القرآن ممتعاً وسهلاً.
                             </p>
                             <div class="grid md:grid-cols-2 gap-4 mb-4">
@@ -219,11 +233,14 @@
                     </div>
                 </div>
             </div>
+
         </div>
     </section>
 
+
+
     <!-- Registration Process -->
-    <section class="py-16 bg-amber-50">
+    <!-- <section class="py-16 bg-amber-50">
         <div class="container mx-auto px-4">
             <div class="text-center mb-12">
                 <h2 class="text-4xl font-bold text-amber-900 mb-4">آلية التسجيل</h2>
@@ -232,34 +249,43 @@
             <div class="max-w-4xl mx-auto">
                 <div class="grid md:grid-cols-4 gap-6">
                     <div class="bg-white rounded-lg shadow-lg p-6 text-center">
-                        <div class="bg-amber-700 text-white rounded-full w-16 h-16 flex items-center justify-center text-2xl font-bold mx-auto mb-4">1</div>
+                        <div
+                            class="bg-amber-700 text-white rounded-full w-16 h-16 flex items-center justify-center text-2xl font-bold mx-auto mb-4">
+                            1</div>
                         <h3 class="text-xl font-bold text-amber-900 mb-3">اختر البرنامج</h3>
                         <p class="text-gray-600">اختر البرنامج المناسب لمستواك</p>
                     </div>
                     <div class="bg-white rounded-lg shadow-lg p-6 text-center">
-                        <div class="bg-amber-700 text-white rounded-full w-16 h-16 flex items-center justify-center text-2xl font-bold mx-auto mb-4">2</div>
+                        <div
+                            class="bg-amber-700 text-white rounded-full w-16 h-16 flex items-center justify-center text-2xl font-bold mx-auto mb-4">
+                            2</div>
                         <h3 class="text-xl font-bold text-amber-900 mb-3">املأ النموذج</h3>
                         <p class="text-gray-600">املأ نموذج التسجيل بالمعلومات المطلوبة</p>
                     </div>
                     <div class="bg-white rounded-lg shadow-lg p-6 text-center">
-                        <div class="bg-amber-700 text-white rounded-full w-16 h-16 flex items-center justify-center text-2xl font-bold mx-auto mb-4">3</div>
+                        <div
+                            class="bg-amber-700 text-white rounded-full w-16 h-16 flex items-center justify-center text-2xl font-bold mx-auto mb-4">
+                            3</div>
                         <h3 class="text-xl font-bold text-amber-900 mb-3">المراجعة</h3>
                         <p class="text-gray-600">سيتم مراجعة طلبك من قبل الإدارة</p>
                     </div>
                     <div class="bg-white rounded-lg shadow-lg p-6 text-center">
-                        <div class="bg-amber-700 text-white rounded-full w-16 h-16 flex items-center justify-center text-2xl font-bold mx-auto mb-4">4</div>
+                        <div
+                            class="bg-amber-700 text-white rounded-full w-16 h-16 flex items-center justify-center text-2xl font-bold mx-auto mb-4">
+                            4</div>
                         <h3 class="text-xl font-bold text-amber-900 mb-3">البدء</h3>
                         <p class="text-gray-600">ستتلقى تأكيداً ويمكنك البدء</p>
                     </div>
                 </div>
                 <div class="text-center mt-12">
-                    <a href="contact.html" class="bg-amber-700 hover:bg-amber-600 text-white px-8 py-3 rounded-lg text-lg transition inline-block">
+                    <a href="contact.html"
+                        class="bg-amber-700 hover:bg-amber-600 text-white px-8 py-3 rounded-lg text-lg transition inline-block">
                         <i class="fas fa-user-plus ml-2"></i> ابدأ التسجيل الآن
                     </a>
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- Footer -->
     <footer class="bg-amber-900 text-white py-12">
@@ -296,7 +322,8 @@
                                 class="fab fa-twitter"></i></a> -->
                         <a href="#" class="text-2xl text-amber-200 hover:text-white transition"><i
                                 class="fab fa-whatsapp"></i></a>
-                        <a href="https://youtube.com/channel/UC_4oT1OEXRwHF2gooTDH1cA?si=6RoJzfLBDA1o37T7" class="text-2xl text-amber-200 hover:text-white transition"><i
+                        <a href="https://youtube.com/channel/UC_4oT1OEXRwHF2gooTDH1cA?si=6RoJzfLBDA1o37T7"
+                            class="text-2xl text-amber-200 hover:text-white transition"><i
                                 class="fab fa-youtube"></i></a>
                     </div>
                 </div>
@@ -309,5 +336,5 @@
 
     <script src="js/main.js"></script>
 </body>
-</html>
 
+</html>
